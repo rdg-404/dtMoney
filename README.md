@@ -32,3 +32,13 @@ Inicia a aplicação
 ```
 
 MirageJs simula uma API fictícia 
+
+
+``` css 
+  
+  yarn add axios
+
+```
+
+Requisição bem mais resumida que o fecth 
+

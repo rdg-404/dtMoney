@@ -24,3 +24,12 @@ Instala as dependências
 
 Inicia a aplicação
 
+
+```
+  ruby 
+  
+  yarn add miragejs
+
+```
+
+MirageJs simula uma API fictícia 

@@ -25,7 +25,7 @@ Instala as dependências
 Inicia a aplicação
 
 
-``` ruby 
+``` css
   
   yarn add miragejs
 

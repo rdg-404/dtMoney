@@ -25,10 +25,20 @@ Instala as dependências
 Inicia a aplicação
 
 
-``` ruby 
+``` css
   
   yarn add miragejs
 
 ```
 
 MirageJs simula uma API fictícia 
+
+
+``` css 
+  
+  yarn add axios
+
+```
+
+Requisição bem mais resumida que o fecth 
+

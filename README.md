@@ -40,5 +40,13 @@ MirageJs simula uma API fictícia
 
 ```
 
-Requisição bem mais resumida que o fecth 
+Requisição bem mais resumida que o fecth ]
+
+``` css 
+  
+  yarn add react-modal
+
+```
+
+Lib para aplicar modals
 

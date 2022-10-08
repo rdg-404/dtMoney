@@ -5,35 +5,22 @@ import Modal from 'react-modal';
 
 import { Container, Content } from './style';
 
+//definicao das props
+interface HeaderProps {
+    onOpenNewTransactionModal: () => void; ///retorno vazio
+}
 
-export function Header(){
-
-    const [isNewTransactionModalOpen, setIsNewTransactionModal] = useState(false);
+export function Header({ onOpenNewTransactionModal }:HeaderProps){
 
 
-
-    function handleOpenNewTransactionModal(){
-        setIsNewTransactionModal(true)
-    }
-
-    function handleCloseNewTransactionModal(){
-        setIsNewTransactionModal(false)
-    }
     return (
         <Container>
             <Content>
                 <img src={logoImg} alt="dt money" />
-                <button type="button" onClick={handleOpenNewTransactionModal}>
+                <button type="button" onClick={onOpenNewTransactionModal}>
                     Nova transação
                 </button>
 
-
-                <Modal 
-                    isOpen={isNewTransactionModalOpen} ///mostra que o modal está aberto 
-                    onRequestClose={handleCloseNewTransactionModal} //fechar modal ao clicar fora da area no esc
-                >
-                    <h2>Cadastrar transação</h2>
-                </Modal>
             </Content>
         </Container>
     )

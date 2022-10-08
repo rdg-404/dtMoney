@@ -42,7 +42,7 @@ MirageJs simula uma API fictícia
 
 Requisição bem mais resumida que o fecth ]
 
-``` php 
+``` java
   
   yarn add react-modal
 

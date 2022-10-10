@@ -13,6 +13,8 @@ export function NewTransactionModal( { isOpen, onRequestClose } : NewTransaction
       <Modal 
         isOpen={isOpen} ///mostra que o modal está aberto 
         onRequestClose={onRequestClose} //fechar modal ao clicar fora da area no esc
+        overlayClassName="react-modal-overlay" ///estilizar parte escura do modal
+        className="react-modal-content" ///estilizar parte do conteudo do modal
       >
 
         <Container>

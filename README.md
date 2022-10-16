@@ -50,3 +50,14 @@ Requisição bem mais resumida que o fecth ]
 
 Lib para aplicar modals
 
+
+
+```
+  css
+  
+  
+  yarn add polished
+
+```
+
+Lib com funções de js prontas para usar em styled components

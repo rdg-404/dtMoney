@@ -63,12 +63,22 @@ export const NewTransactionButton = styled.div `
     gap: 0.5rem;
 
 
-    button{
+    
+`;
+
+//interface para reconhecer a nova prop la do index (isActive)
+interface RadioBoxProps {
+    isActive: boolean;
+}
+
+export const RadioBox = styled.button<RadioBoxProps> `
         height: 4rem;
         border: 1px solid #d7d7d7;
         border-radius: 0.25rem;
 
-        background: transparent;
+        //pega todas as props do elemento e executa auto
+
+        background: ${(props) => props.isActive ? '#ccc' : 'transparent'};
 
         display: flex;
         align-items: center;
@@ -77,7 +87,6 @@ export const NewTransactionButton = styled.div `
         &:hover{
             border-color: ${darken(0.2, '#d7d7d7')}; /*escurece o elemento*/
         }
-    }   
 
    
 

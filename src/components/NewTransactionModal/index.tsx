@@ -1,9 +1,10 @@
 import Modal from "react-modal";
 import {Container} from './styles';
-import {NewTransactionButton} from './styles';
+import {NewTransactionButton, RadioBox} from './styles';
 import fecharImg from '../../assets/fechar.svg';
 import entradasImg from '../../assets/entradas.svg';
 import saidasImg from '../../assets/saidas.svg';
+import { useState } from "react";
 
 //props do modal
 interface NewTransactionModalProps {
@@ -12,6 +13,9 @@ interface NewTransactionModalProps {
 }
 
 export function NewTransactionModal( { isOpen, onRequestClose } : NewTransactionModalProps) {
+
+    const [type, setType] = useState('deposito')
+
     return (
         
       <Modal 
@@ -39,19 +43,23 @@ export function NewTransactionModal( { isOpen, onRequestClose } : NewTransaction
           />
 
           <NewTransactionButton>
-            <button 
+            <RadioBox 
             type="button"
+            onClick={() => { setType('deposito')}} //se clicar no botao ele fica deposito
+            isActive={type === 'deposito'} //ativa o botao
             >
               <img src={entradasImg} alt="Entradas" />
               <span>Entradas</span>
-            </button>
+            </RadioBox>
 
-            <button 
+            <RadioBox 
             type="button"
+            onClick={() => { setType('saida')}}
+            isActive={type === 'saida'}
             >
               <img src={saidasImg} alt="Saídas" />
               <span>Saídas</span>
-            </button>
+            </RadioBox>
           </NewTransactionButton>
           <input 
             placeholder="Categoria" 

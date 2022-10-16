@@ -52,8 +52,7 @@ Lib para aplicar modals
 
 
 
-```
-  css
+``` css
   
   
   yarn add polished

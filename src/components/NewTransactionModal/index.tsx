@@ -44,18 +44,21 @@ export function NewTransactionModal( { isOpen, onRequestClose } : NewTransaction
 
           <NewTransactionButton>
             <RadioBox 
-            type="button"
-            onClick={() => { setType('deposito')}} //se clicar no botao ele fica deposito
-            isActive={type === 'deposito'} //ativa o botao
+              type="button"
+              onClick={() => { setType('deposito')}} //se clicar no botao ele fica deposito
+              isActive={type === 'deposito'} //ativa o botao
+              activeColor="green"
+              
             >
               <img src={entradasImg} alt="Entradas" />
               <span>Entradas</span>
             </RadioBox>
 
             <RadioBox 
-            type="button"
-            onClick={() => { setType('saida')}}
-            isActive={type === 'saida'}
+              type="button"
+              onClick={() => { setType('saida')}}
+              isActive={type === 'saida'}
+              activeColor="red"
             >
               <img src={saidasImg} alt="Saídas" />
               <span>Saídas</span>

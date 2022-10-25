@@ -4,7 +4,7 @@ import {NewTransactionButton, RadioBox} from './styles';
 import fecharImg from '../../assets/fechar.svg';
 import entradasImg from '../../assets/entradas.svg';
 import saidasImg from '../../assets/saidas.svg';
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 //props do modal
 interface NewTransactionModalProps {
@@ -15,6 +15,10 @@ interface NewTransactionModalProps {
 export function NewTransactionModal( { isOpen, onRequestClose } : NewTransactionModalProps) {
 
     const [type, setType] = useState('deposito')
+
+    function handleCreateNewTransaction(event: FormEvent){
+      event.preventDefault();
+    }
 
     return (
         
@@ -29,7 +33,7 @@ export function NewTransactionModal( { isOpen, onRequestClose } : NewTransaction
           <img src={fecharImg} alt="Fechar modal" />
         </button>
 
-        <Container>
+        <Container onSubmit={handleCreateNewTransaction}>
           <h2>Cadastrar transação</h2>
 
 

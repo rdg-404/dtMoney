@@ -21,6 +21,12 @@ createServer({
         }
       ]
     })
+
+    this.post('/transactions', (schema, request) => {
+      const data = JSON.parse(request.requestBody) //transforma o formato da resposta em JSON
+
+      return data
+    })
   }
 });
 

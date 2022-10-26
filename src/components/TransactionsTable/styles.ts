@@ -34,7 +34,7 @@ export const Container = styled.div `
             color: var(--green);
         }
 
-        &.retirada {
+        &.saida {
             color: var(--red);
         }
       }

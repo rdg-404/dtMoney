@@ -1,11 +1,14 @@
 import Modal from "react-modal";
-import {Container} from './styles';
-import {NewTransactionButton, RadioBox} from './styles';
+import { api } from "../services/api";
+import { FormEvent, useState, useContext } from "react";
+import { TransactionContext } from "../../TransactionsContext";
+
 import fecharImg from '../../assets/fechar.svg';
 import entradasImg from '../../assets/entradas.svg';
 import saidasImg from '../../assets/saidas.svg';
-import { FormEvent, useState } from "react";
-import { api } from "../services/api";
+
+import {Container} from './styles';
+import {NewTransactionButton, RadioBox} from './styles';
 
 //props do modal
 interface NewTransactionModalProps {
@@ -14,24 +17,28 @@ interface NewTransactionModalProps {
 }
 
 export function NewTransactionModal( { isOpen, onRequestClose } : NewTransactionModalProps) {
-    const [title, setTitle] = useState('');
-    const [value, setValue] = useState(0);
-    const [category, setCategory] = useState('');
-    const [type, setType] = useState('deposito')
+
+  //peega o context criado la em transactionContext
+  const {createTransactions} = useContext(TransactionContext)
+
+
+  const [title, setTitle] = useState('');
+  const [amount, setAmount] = useState(0);
+  const [category, setCategory] = useState('');
+  const [type, setType] = useState('deposito')
 
     function handleCreateNewTransaction(event: FormEvent){
       event.preventDefault();
+      
 
-      const data = {
+      createTransactions({
         title,
-        value,
+        amount,
         category,
-        type
-      };
-
-      api.post("/transactions", data)
+        type,
+      })
+    
     }
-
     return (
         
       <Modal 
@@ -58,8 +65,8 @@ export function NewTransactionModal( { isOpen, onRequestClose } : NewTransaction
           <input 
             type="number" 
             placeholder="Valor"
-            value={value}
-            onChange={event => setValue(Number(event.target.value))}
+            value={amount}
+            onChange={event => setAmount(Number(event.target.value))}
           />
 
           <NewTransactionButton>

@@ -12,7 +12,7 @@ export function Summary(){
 
     const {transactions} = useContext(TransactionContext);
 
-    console.log(transactions)
+
 
     return (
         <Container>

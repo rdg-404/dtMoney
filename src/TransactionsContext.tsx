@@ -21,7 +21,7 @@ interface TransactionsProviderProps {
 
 interface TransactionContextData {
     transactions: Transaction[];
-    createTransactions: (transactions: TransactionInput) => Promise<void>;
+    createTransactions: (transaction: TransactionInput) => Promise<void>;
 }
 
 export const TransactionContext = createContext<TransactionContextData>(
@@ -36,7 +36,7 @@ export function TransactionsProvider({ children }: TransactionsProviderProps){
     useEffect(() => {
         api.get("transactions")
             .then(response => setTransactions(response.data.transactions))
-    }, []);
+    }, []); 
 
 
     async function createTransactions(transactionInput: TransactionInput){
@@ -48,10 +48,8 @@ export function TransactionsProvider({ children }: TransactionsProviderProps){
       const { transaction } = response.data;
 
 
-      setTransactions({
-        ...transactions,
-        transaction,
-      });
+      setTransactions(
+        currentTransactions => [...currentTransactions, transaction]);
     }
 
     return (

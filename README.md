@@ -86,6 +86,5 @@ Lib com funções de js prontas para usar em styled components
 </div>
 
 
-
-<h2 align="right">Desenvolvido por [Rodrigo](https://github.com/rdg-404)</h2>
+Desenvolvido por [Rodrigo](https://github.com/rdg-404)
 <h3 align="right">Aplicação feita no Ignite, programa de especialização da Rocketseat</h3>

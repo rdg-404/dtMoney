@@ -25,6 +25,8 @@ Instala as dependências
 Inicia a aplicação
 
 
+<h2>Dependencias</h2>
+
 ``` css
   
   yarn add miragejs
@@ -60,3 +62,30 @@ Lib para aplicar modals
 ```
 
 Lib com funções de js prontas para usar em styled components
+
+
+
+<h1 align="center">Como a aplicação funciona...</h1>
+
+<strong>A aplicação mostra cotação de gastos e ganhos</strong>
+
+<h3 align="center">Dashboard</h3>
+<div align="center">
+  <img src="src/assets/prints/img01.png"/>
+</div>
+
+<h3 align="center">Cadastro de informações</h3>
+<div align="center">
+   <img src="src/assets/prints/img02.png"/>
+</div>
+
+
+<h3 align="center">Resultado no dashboard ao incluir informações</h3>
+<div align="center">
+   <img src="src/assets/prints/img03.png"/>
+</div>
+
+
+
+<h2 align="right">Desenvolvido por [Rodrigo](https://github.com/rdg-404)</h2>
+<h3 align="right">Aplicação feita no Ignite, programa de especialização da Rocketseat</h3>
